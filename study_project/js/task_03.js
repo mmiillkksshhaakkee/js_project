@@ -13,7 +13,7 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-const numberOfFilms;
+let numberOfFilms;
 
 function start(){
     numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели? Тупо за всю жизнь", "");

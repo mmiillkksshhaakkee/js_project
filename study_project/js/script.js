@@ -12,18 +12,15 @@
 // answers[1] = prompt('Your last name?', '');
 // answers[2] = prompt('Your age?', '');
 
-function makeWorker() {
-    let name = "Pete";
-  
-    return function() {
-      console.log(name);
-    };
+function f() {
+  let value = Math.random();
+
+  function g() {
+    debugger; // в консоли: напишите alert(value); Такой переменной нет!
   }
-  
-  let name = "John";
-  
-  // create a function
-  let work = makeWorker();
-  
-  // call it
-  work();
+
+  return g;
+}
+
+let g = f();
+g();

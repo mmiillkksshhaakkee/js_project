@@ -74,11 +74,14 @@ for(let i = 0; i < 2; i++){
 //     personalMovieDB.movies[a] = b;
 // }
 
-if(personalMovieDB.count < 10){ alert("Просмотрено довольно мало фильмов..."); }
-else if(personalMovieDB.count <= 30 && personalMovieDB.count >= 10) {
+if(personalMovieDB.count < 10){
+    alert("Просмотрено довольно мало фильмов...");
+} else if(personalMovieDB.count <= 30 && personalMovieDB.count >= 10) {
     alert("Вы — классический зритель.");
 } else if(personalMovieDB.count > 30){
     alert("Вы — киноман!");
-} else {alert("Error");}
+} else {
+    alert("Error");
+}
 
 console.log(personalMovieDB);
