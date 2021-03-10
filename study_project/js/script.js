@@ -12,3 +12,18 @@
 // answers[1] = prompt('Your last name?', '');
 // answers[2] = prompt('Your age?', '');
 
+function makeWorker() {
+    let name = "Pete";
+  
+    return function() {
+      console.log(name);
+    };
+  }
+  
+  let name = "John";
+  
+  // create a function
+  let work = makeWorker();
+  
+  // call it
+  work();
