@@ -12,15 +12,3 @@
 // answers[1] = prompt('Your last name?', '');
 // answers[2] = prompt('Your age?', '');
 
-function f() {
-  let value = Math.random();
-
-  function g() {
-    debugger; // в консоли: напишите alert(value); Такой переменной нет!
-  }
-
-  return g;
-}
-
-let g = f();
-g();
