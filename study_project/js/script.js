@@ -12,24 +12,24 @@
 // answers[1] = prompt('Your last name?', '');
 // answers[2] = prompt('Your age?', '');
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
 
-    makeTest: function(){
-        console.log("Test");
-    }
-};
+//     makeTest: function(){
+//         console.log("Test");
+//     }
+// };
 
-options.makeTest();
-// ДЕСТРУКТУРИЗАЦИЯ ОБЪЕКТА
-const {border, bg} = options.colors;
-console.log(border);
+// options.makeTest();
+// // ДЕСТРУКТУРИЗАЦИЯ ОБЪЕКТА
+// const {border, bg} = options.colors;
+// console.log(border);
 
 // console.log(Object.keys(options));
 // console.log(Object.keys(options).length);
@@ -51,3 +51,23 @@ console.log(border);
 
 // console.log(counter);
 
+let someObj = {
+    a: 2,
+};
+ 
+  let obj = Object.create(someObj, { 
+    b: {
+      value: 2,  
+    },
+    c: {
+      value: 3,
+      enumerable: true,  
+    },
+  });
+  
+  let objCopy = Object.assign({}, obj);
+  console.log(objCopy); // { c: 3 }
+
+  let clone = Object.defineProperties({}, Object.getOwnPropertyDescriptors(someObj));
+  
+  console.log(JSON.stringify(Object.getOwnPropertyDescriptors(obj), null, 2 ));
