@@ -90,4 +90,3 @@ const soldier = {
 
 const john = Object.create(soldier);
 console.log(john.armor); // где дескрипторы свойств???
-console.log(JSON.stringify(Object.getOwnPropertyDescriptor(john, 'health'), null, 2 ));
