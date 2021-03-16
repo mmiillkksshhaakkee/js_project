@@ -83,10 +83,14 @@ var obj = Object.assign({}, v1, null, v2, undefined, v3, v4);
 // Обратите внимание, что собственные перечисляемые свойства имеет только обёртка над строкой.
 console.log(obj); // { "0": "1", "1": "2", "2": "3" } */
 
-const soldier = {
-    health: 400,
-    armor: 100
-};
+// const soldier = {
+//     health: 400,
+//     armor: 100
+// };
 
-const john = Object.create(soldier);
-console.log(john.armor); // где дескрипторы свойств???
+// const john = Object.create(soldier);
+// console.log(john.armor); // где дескрипторы свойств???
+
+
+
+console.log("Ё" > "Я");
