@@ -24,3 +24,37 @@ const movieDB = {
     ]
 };
 
+// #1
+const adv = document.querySelectorAll('.promo__adv img'),
+      poster = document.querySelector('.promo__bg'),
+      promoName = poster.querySelector('.promo__genre'),
+      movieList = document.querySelector('.promo__interactive-list');
+
+//console.log(adv.length);
+adv.forEach(item => item.remove());
+
+// adv.forEach(function(item) {item.remove();});
+
+// #2
+promoName.textContent = 'ДРАМА';
+
+// #3
+poster.style.backgroundImage = 'url("img/bg.jpg")';
+
+// #4
+movieList.innerHTML = "";
+movieDB.movies.sort();
+
+// movieDB.movies.forEach((film, i) => {
+//     movieList.innerHTML += `
+//         <li class="promo__interactive-item">${i + 1}. ${film}
+//             <div class="delete"></div>
+//         </li>
+//     `;
+// });
+
+movieDB.movies.forEach((film, i) => {
+    movieList.innerHTML += `
+        <li><a class="promo__menu-item" href="#">Мультфильмы</a></li>
+    `;
+});
