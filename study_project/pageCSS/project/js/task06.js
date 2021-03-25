@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
           promoName = poster.querySelector('.promo__genre'),
           movieList = document.querySelector('.promo__interactive-list');
     
-    const add = document.querySelector('form.add'),
-          btnConfirm = add.querySelector('button'),
-          input = add.querySelector('.adding__input'),
-          trashCans = movieList.querySelectorAll('.delete'),
-          check = add.querySelector('[type="checkbox"]');
+    const add = document.querySelector('form.add'), //берем форму
+          //btnConfirm = add.querySelector('button'),
+          input = add.querySelector('.adding__input'),  // берем поле ввода
+          //trashCans = movieList.querySelectorAll('.delete'),
+          check = add.querySelector('[type="checkbox"]');   // берем чекбокс формы
     
-    add.addEventListener('submit', (e) => {
+    add.addEventListener('submit', (e) => { // навешиваем обработчик на форму и событие сабмита данных
         e.preventDefault();
 
         let newMovie = input.value;
@@ -59,10 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
             sortArray(movieDB.movies);
     
             createMovieList(movieDB.movies, movieList);
+
             if(favorite){
                 console.log("Добавляем новый фильм!");
             }
-            e.target.reset();
+
+            e.target.reset();   // сброс поля ввода
         }
         
     });
@@ -84,14 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortArray = (arr) => {
         arr.sort();
     };
-    // #вывод нумерованного отсортированного списка фильмов 
+    // ^^^ сортировка массива фильмов (на случай если будет не простая сортировка а что-то еще)
 
     function createMovieList(films, parent) {
-        parent.innerHTML = "";
+        parent.innerHTML = "";  // очистка родительской верстки, удаление всех фильмов из списка
 
-        sortArray(films);
+        sortArray(films);       // сортировка массива с фильмами заново
 
-        films.forEach((film, i) => {
+        films.forEach((film, i) => {    // добавление кода для каждого фильма в списке
             parent.innerHTML += `
                 <li class="promo__interactive-item">${i + 1}. ${film}
                     <div class="delete"></div>
@@ -99,12 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
 
+        // обработчик для мусорных корзин
         document.querySelectorAll('.delete').forEach((trashCan, i) => {
             trashCan.addEventListener('click', () => {
-                trashCan.parentElement.remove();
-                movieDB.movies.splice(i, 1);
+                trashCan.parentElement.remove();    // удаление фильма (родителя) из списка
+                movieDB.movies.splice(i, 1);        // удаление фильма из массива базы данных
 
-                createMovieList(films, parent);
+                createMovieList(films, parent);     // создание списка заново
             });
 
         });
@@ -112,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     deleteAdv(adv);
     makeChanges();
-    
     createMovieList(movieDB.movies, movieList);
     
     // 

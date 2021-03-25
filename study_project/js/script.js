@@ -93,4 +93,19 @@ console.log(obj); // { "0": "1", "1": "2", "2": "3" } */
 
 
 
-console.log("Ё" > "Я");
+// console.log("Ё" > "Я");
+
+const p = document.querySelectorAll('p');
+console.log(p);
+
+// создание и добавление элемента 
+function loadScript(src) {
+  const script = document.createElement('script');
+  script.src = src;
+  script.async = false;
+  
+  document.body.append(script);
+}
+
+loadScript("js/test.js");
+loadScript("js/some.js");
