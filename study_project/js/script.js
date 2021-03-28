@@ -95,17 +95,42 @@ console.log(obj); // { "0": "1", "1": "2", "2": "3" } */
 
 // console.log("Ё" > "Я");
 
-const p = document.querySelectorAll('p');
-console.log(p);
+// const p = document.querySelectorAll('p');
+// console.log(p);
 
-// создание и добавление элемента 
-function loadScript(src) {
-  const script = document.createElement('script');
-  script.src = src;
-  script.async = false;
+// // создание и добавление элемента 
+// function loadScript(src) {
+//   const script = document.createElement('script');
+//   script.src = src;
+//   script.async = false;
   
-  document.body.append(script);
-}
+//   document.body.append(script);
+// }
 
-loadScript("js/test.js");
-loadScript("js/some.js");
+// loadScript("js/test.js");
+// loadScript("js/some.js");
+
+const now = new Date();
+
+
+console.log(now.setHours(18));
+console.log(now);
+
+let start = new Date();
+for (let i = 0; i < 100000; i++){
+  let some = i ** 3;
+}
+let end = new Date();
+
+alert(`Цикл отработал за ${end - start} миллисекунд`);
+
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getHours());
+// console.log(now.getSeconds());
+// console.log(now.getMilliseconds());
+
+// console.log(now.getUTCHours());
+
+console.log(now.getTimezoneOffset());
